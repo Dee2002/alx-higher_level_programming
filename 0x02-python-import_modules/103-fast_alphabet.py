@@ -1,2 +1,9 @@
 #!/usr/bin/python3
-print(chr(65) * 26)
+import sys
+
+def print_alphabet(start):
+    if start <= ord('Z'):
+        sys.stdout.write(chr(start))
+        print_alphabet(start + 1)
+
+print_alphabet(ord('A'))
