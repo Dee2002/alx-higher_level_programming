@@ -1,19 +1,14 @@
-def square_matrix_simple(matrix=[]):
-    # Create a new matrix with the same size as the input matrix
-    new_matrix = []
-    for row in matrix:
-        new_row = []
-        for num in row:
-            new_row.append(num * num)  # Compute the square value and add to new row
-        new_matrix.append(new_row)  # Add new row to the new matrix
-    return new_matrix
+def search_replace(my_list, search, replace):
+    new_list = []
+    for num in my_list:
+        if num == search:
+            new_list.append(replace)  # Replace the element with the new element
+        else:
+            new_list.append(num)  # Keep the element unchanged if not equal to the search element
+    return new_list
 
 # Test the function with the provided example
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-new_matrix = square_matrix_simple(matrix)
-print(new_matrix)
-print(matrix)
+my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
+new_list = search_replace(my_list, 2, 89)
+print(new_list)
+print(my_list)
