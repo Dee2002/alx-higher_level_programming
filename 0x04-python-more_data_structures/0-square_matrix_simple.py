@@ -1,11 +1,5 @@
 def square_matrix_simple(matrix=[]):
-    # Create a new matrix with the same size as the input matrix
-    new_matrix = []
-    for row in matrix:
-        new_row = []
-        for num in row:
-            new_row.append(num * num)  # Compute the square value and add to new row
-        new_matrix.append(new_row)  # Add new row to the new matrix
+    new_matrix = [[num * num for num in row] for row in matrix]
     return new_matrix
 
 # Test the function with the provided example
