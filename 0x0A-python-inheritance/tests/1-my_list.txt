@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""Test module for MyList class"""
+
+import unittest
+from io import StringIO
+import sys
+
+# Import MyList class from the main script
+MyList = __import__('1-my_list').MyList
+
+class TestMyList(unittest.TestCase):
+    def setUp(self):
+        self.my_list = MyList()
+        self.original_stdout = sys.stdout
+        sys.stdout = StringIO()
+
+    def tearDown(self):
+        sys.stdout = self.original_stdout
+
+    def test_print_sorted(self):
+        self.my_list.append(1)
+        self.my_list.append(4)
+        self.my_list.append(2)
+        self.my_list.append(3)
+        self.my_list.append(5)
+
+        # Check if the list is sorted and printed correctly
+        self.my_list.print_sorted()
+        self.assertEqual(sys.stdout.getvalue(), "[1, 2, 3, 4, 5]\n")
+
+if __name__ == '__main__':
+    unittest.main()
