@@ -15,6 +15,6 @@ class Base:
 
 
 if __name__ == "__main__":
-    # This code will execute if you run base.py directly
+    # This code will execute if base.py dis run directly
     base_instance = Base(42)
     base_instance.display()
