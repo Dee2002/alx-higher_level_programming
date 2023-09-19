@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import json
 import csv
-import turtle
-
+import turtle as tt
+from random import choice
+from time import sleep
 
 class Base:
     __nb_objects = 0
