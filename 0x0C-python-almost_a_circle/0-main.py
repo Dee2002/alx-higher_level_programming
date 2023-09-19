@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """ 0-main """
 from models.base import Base
 
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     b3 = Base()
     print(b3.id)
 
-    b4 =Base()
+    b4 =Base(12)
     print(b4.id)
 
     b5 =Base()
