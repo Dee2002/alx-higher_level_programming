@@ -4,8 +4,22 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    This class represents rectangle with width,height,x,y coordinates,and an id
+    It inherits from the Base class for JSON and CSV serialization.
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initialize a Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the rectangle.
+            y (int): The y-coordinate of the rectangle.
+            id (int): The unique identifier for the instance.
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -81,7 +95,7 @@ class Rectangle(Base):
 
     @staticmethod
     def setter_validation(attribute, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(attribute))
         if attribute == "x" or attribute == "y":
             if value < 0:

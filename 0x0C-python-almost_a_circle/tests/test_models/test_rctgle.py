@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 
-import io
-
+import os
 import sys
-
 import unittest
-
-from models.base import Base
-
-from models.square import Square
-
+import io
 from models.rectangle import Rectangle
+from models.base import Base
+from models.square import Square
 
 
 class TestRectangle_instantiation(unittest.TestCase):
@@ -180,10 +176,12 @@ class TestRectangle_width(unittest.TestCase):
 
             Rectangle({"a": 1, "b": 2}, 2)
 
-    def test_bool_width(self):
 
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-
+def test_bool_width(self):
+    with self.assertRaisesRegex(TypeError, "width must be an integer"):
+        # The Rectangle constructor is called within the context
+        # of assertRaisesRegex.
+        with self.assertRaises(TypeError):
             Rectangle(True, 2)
 
     def test_list_width(self):
@@ -400,10 +398,12 @@ class TestRectangle_x(unittest.TestCase):
 
             Rectangle(1, 2, {"a": 1, "b": 2}, 2)
 
-    def test_bool_x(self):
 
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-
+def test_bool_x(self):
+    with self.assertRaisesRegex(TypeError, "x must be an integer"):
+        # The Rectangle constructor is called within the context
+        # of assertRaisesRegex.
+        with self.assertRaises(TypeError):
             Rectangle(1, 2, True, 2)
 
     def test_list_x(self):

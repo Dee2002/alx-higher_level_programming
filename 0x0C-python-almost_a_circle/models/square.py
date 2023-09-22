@@ -5,7 +5,21 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """
+    This class represents a square shape with a size,x,y coordinates,and an id
+    Inherits from Rectangle class and Base class for JSON and CSV serialization
+    """
+
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        Initialize a Square instance.
+
+        Args:
+            size (int): The size (width and height) of the square.
+            x (int): The x-coordinate of the square.
+            y (int): The y-coordinate of the square.
+            id (int): The unique identifier for the instance.
+        """
         # Pass 'size' twice to set 'width' and 'height'
         super().__init__(size, size, x, y, id)
 

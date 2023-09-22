@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 
+import os
+import sys
 import unittest
+
 from models.base import Base
+
+# Calculate the project directory path
+project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+models_dir = os.path.join(project_dir, 'models')
 
 
 class TestBase(unittest.TestCase):
